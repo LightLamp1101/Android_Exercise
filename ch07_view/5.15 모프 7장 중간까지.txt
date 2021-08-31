@@ -1,0 +1,141 @@
+ch06 8p
+public CustomView(Context context, AttributeSet attrs) { super(context); setBackgroundColor(Color. YELLOW ); 
+XML에서 사용하기위해 AttributeSet 인수가 있는 생성자 사용
+set.AntiAlias(true) 계단현상 없에기
+12p 실습
+invalidate를 통해 무한반복
+15p
+typefae 가 폰트 이름
+23p
+Bitmap 형식으로 단순히 그리거나 크기조절 가능
+24p
+행렬을 통해 반대로 만들 수도 있음
+28p
+도형객체 Drawable resource file 을 통해 도형객체를 만들어 사용할 수 있음
+30p 객체에
+solid
+gradient를 통해 그라데이션 가능
+30~31p
+i.setImageDrawable(getResources().getDrawable(R.drawable.circleobj));
+교재31p의 빨간 문장과 다르게 리소스를 받아주는 과정 필요함
+
+====================================================================
+
+5.13
+ch06 그래픽 -> 애니메이션 32p~
+
+36p 온클릭리스너
+레이아웃을 인자로 받아 fade()를 통해 시간을 정해 서서히 사라짐
+Interpolator() 효과주기
+
+
+39p 프로퍼티 애니메이션
+애니메이션에 속성을 부여
+시간
+선형 애니메이션 일정시간 애니메이션
+비선형 애니메이션 시간흐름이 불규칙적
+
+ofFloat에서 값을 넣어줌
+값이 바뀌었을때 AnimatorUpdateListener()을 통해 값을 바꿔주고 그 값을 mX에 저장
+invalidate()를 하면 onDraw가 호출되어 바뀐값(x좌표)으로 원을 그려줌
+43p값을 1000정도로
+
+fadeout가능
+setAlpha((int)mX);를 통해 페이드아웃처럼 사용도 가능
+
+
+드로워블 애니메이션
+drawable에 xml을 만들고 XML에서 animationlist를 통해 oneshot속성은 true 한번하고 끝남 false하면 무한반복
+item으로 이미지들을 줌
+
+
+서피스 뷰(어려움)
+계산하여 뷰로 넘겨주는 API
+내가 마음대로  그릴 수 있는 화면
+Callback을 implements 인터페이스 상속받음
+메인액티비티와 그림을 그릴 쓰레드 사이의 중계자
+getHolder()를 통해 서피스뷰의 핸들러를 반환(서피스뷰의 포인터)
+
+56p부터 실습
+getHolder은 서피스 뷰의 포인터
+쓰레드에 이 포인터를 넘겨주어 그림을 그림
+서피스 뷰가 생성되면 쓰레드를 생성시키고
+파괴될때 쓰레드를 중지시키고 메인쓰레드에 합쳐줌
+자바에서 여러개의 쓰레드를 사용할때 충돌을 막기위해 하나만 사용하도록 synchronized 동기화
+마지막에 unlockCanvasAndPost를 통해 메인액티비티에 그림을 출력
+랜덤함수를 사용하여 
+
+57p ball
+볼을 앤덤으로 생성
+paint함수에서 if문 두개를 사용하여 볼이 벽에 닿을때마다 튀기는 효과처럼 보이게 진행방향을 반대로 바꿔줌
+x<radius || WIDTH-radius
+
+
+해보기 동기에서 오류가있어 밑에 살짝 들어가는거 해결하기
+x와 y값 랜덤일때 
+
+코드 분석해보자~!@!#!@#$2513
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===================================================
+5.15 ch07 리스트
+리스트뷰 상하 수직으로 데이터를 확인가능
+getView()가 데이터의 어뎁터 역할을 하여 뷰에 데이터를 넣어줌
+11p 텍스트뷰 gravity end로 끝에 텍스트를 붙임
+12p onItemClick의 position 실제 위치가 아닌 데이터의 순서??위치
+ArrayAdoapter 부분에서 데이터 처리를 하고 클릭 여부 정도만 확인
+
+그리드뷰
+columnwidth로 칼럼 길이를 정함 칼럼을 사용해 여러가지 설정 가능
+17p데이터가 몇개인지 알려주기 위해 getCount사용 (중요)
+18p 두번째 인자 convertView 스크롤 시 사용안하는 뷰를 재횔용하기위해 사용하지 않는 뷰를 주는 역할
+null이 아니면 그대로 사용하고 null일시 동작
+베이스 어뎁터 사용법 아는것이 중요 ( 많이 사용함)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===================================================
+
+
+

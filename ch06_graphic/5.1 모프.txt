@@ -1,0 +1,20 @@
+ch06 8p
+public CustomView(Context context, AttributeSet attrs) { super(context); setBackgroundColor(Color. YELLOW ); 
+XML에서 사용하기위해 AttributeSet 인수가 있는 생성자 사용
+set.AntiAlias(true) 계단현상 없에기
+12p 실습
+invalidate를 통해 무한반복
+15p
+typefae 가 폰트 이름
+23p
+Bitmap 형식으로 단순히 그리거나 크기조절 가능
+24p
+행렬을 통해 반대로 만들 수도 있음
+28p
+도형객체 Drawable resource file 을 통해 도형객체를 만들어 사용할 수 있음
+30p 객체에
+solid
+gradient를 통해 그라데이션 가능
+30~31p
+i.setImageDrawable(getResources().getDrawable(R.drawable.circleobj));
+교재31p의 빨간 문장과 다르게 리소스를 받아주는 과정 필요함
